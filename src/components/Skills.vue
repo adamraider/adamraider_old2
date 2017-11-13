@@ -65,14 +65,19 @@ export default {
     justify-content: center
 
 .skill
-  margin: 0 2rem 3rem
+  margin: 0 1rem 3rem
+  @media(min-width: 720px)
+    margin: 0 2rem 3rem
   display: flex
   flex-direction: column
   align-items: center
   
   &__logo
-    width: 5rem
-    height: 5rem
+    width: 3rem
+    height: 3rem
+    @media(min-width: 720px)
+      width: 5rem
+      height: 5rem
     background-position: center
     background-size: contain
     background-repeat: no-repeat

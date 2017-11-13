@@ -43,7 +43,9 @@ export default {
 .app
   &__content
     max-width: 1080px
-    margin: 8rem auto
+    margin: 6rem auto
+    @media(min-width: 720px)
+      margin: 8rem auto
     padding: 0 1rem
     font-size: 1rem
     color: #333
@@ -66,4 +68,7 @@ export default {
     border: 3px solid #000
     border-radius: 1em
     position: relative
+    display: none
+    @media(min-width: 720px)
+      display: block
 </style>

@@ -40,6 +40,9 @@ export default {
 .project
   display: flex
   width: 100%
+  flex-direction: column
+  @media(min-width: 720px)
+    flex-direction: row
   &:not(:last-child)
     margin-bottom: 6rem
   
@@ -53,7 +56,8 @@ export default {
 
   &__info
     padding-top: 3rem
-    width: 54%
+    @media(min-width: 720px)
+      width: 54%
 
   &__heading
     margin-bottom: 0.5rem

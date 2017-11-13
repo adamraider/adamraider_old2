@@ -11,27 +11,27 @@ export default {
     return {
       companies: [
         {
-          image: '/static/privacy.svg',
+          image: '/static/companies/privacy.svg',
           name: 'Privacy',
           class: 'privacy'
         },
         {
-          image: '/static/tokenly2.png',
+          image: '/static/companies/tokenly2.png',
           name: 'Tokenly',
           class: 'tokenly'
         },
         {
-          image: '/static/mealpal.svg',
+          image: '/static/companies/mealpal.svg',
           name: 'MealPal',
           class: 'mealpal'
         },
         {
-          image: '/static/nycda.svg',
+          image: '/static/companies/nycda.svg',
           name: 'New York Code + Design Academy',
           class: 'nycda'
         },
         {
-          image: '/static/getaway.svg',
+          image: '/static/companies/getaway.svg',
           name: 'Getaway',
           class: 'getaway'
         }
@@ -55,8 +55,11 @@ export default {
     justify-content: center
 
   &__example
-    width: 12rem
-    margin: 0 3rem 3rem
+    width: 7rem
+    margin: 0 1rem 3rem
+    @media(min-width: 720px)
+      width: 12rem
+      margin: 0 3rem 3rem
     background-size: contain
     background-repeat: no-repeat
     background-position: center
