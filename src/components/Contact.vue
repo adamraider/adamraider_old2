@@ -1,10 +1,10 @@
 <template lang="pug">
-.contact
-  template(v-if="completed")
+.contact(:class="{ 'contact--completed': completed, 'contact--incompleted': !completed }")
+  .contact__thanks
     .h2.text--center.contact__heading Thank you.
     .h3.text--center I'll be in touch shortly.
   
-  template(v-else)
+  .contact__ready
     .h2.text--center.contact__heading I'd love to work with you.
     .h3.text--center How do you take your coffee?
     form.contact__form(@submit.prevent="submitForm()", :class="{ 'contact__form--processing': processing }")
@@ -34,6 +34,14 @@ export default {
     submitForm () {
       this.error = null
       this.processing = true
+
+      if (process.env.NODE_ENV === 'development') {
+        return setTimeout(() => {
+          this.completed = true
+          this.processing = false
+        }, 2000)
+      }
+
       axios.post('https://formspree.io/adamjraider@gmail.com', {
         name: this.name,
         email: this.email,
@@ -41,7 +49,6 @@ export default {
       }).then(res => {
         this.completed = true
         this.processing = false
-        console.log(res)
       }).catch(res => {
         this.completed = false
         this.processing = false
@@ -54,6 +61,28 @@ export default {
 
 <style lang="sass" scoped>
 .contact
+  &--incompleted
+    .contact__thanks
+      display: none
+
+  &--completed
+    .contact__thanks
+      opacity: 0
+      height: 0
+      animation-name: contactIn
+      animation-duration: 0.5s
+      animation-delay: 0.5s
+      animation-fill-mode: forwards
+      position: relative
+      top: 10rem
+    
+    .contact__ready
+      animation-name: contactOut
+      animation-duration: 0.5s
+      animation-fill-mode: forwards
+      position: relative
+      z-index: -1
+
   &__heading
     margin-bottom: 0.75rem
 
@@ -79,4 +108,30 @@ export default {
       margin-bottom: 0.75rem
       border-radius: 0.5rem
       transition: 0.15s ease
+
+@keyframes contactIn
+  0%
+    display: none
+    height: auto
+    opacity: 0
+
+  1%
+    display: block
+
+  100%
+    opacity: 1
+    display: block
+    
+
+@keyframes contactOut
+  0%
+    display: block
+    opacity: 1
+
+  99%
+    display: block
+  
+  100%
+    opacity: 0
+    display: none
 </style>

@@ -2,7 +2,7 @@
 .projects
   .project
     .project__browser
-      img(src="/static/examples/extensions.png")
+      img(src="/static/examples/framed_extensions.png")
 
     .project__info
       .h2.project__heading Extensions.af
@@ -11,7 +11,7 @@
 
   .project
     .project__browser
-      img(src="/static/examples/swipebuy.png")
+      img(src="/static/examples/framed_swipebuy.png")
 
     .project__info
       .h2.project__heading Swipebuy
@@ -20,7 +20,7 @@
 
   .project
     .project__browser
-      img(src="/static/examples/mealpal.png")
+      img(src="/static/examples/framed_mealpal.png")
 
     .project__info
       .h2.project__heading MealPal
@@ -34,30 +34,30 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+$grid-gutter-width: 4rem
 .projects
   margin-bottom: 10rem
-
+    
 .project
   display: flex
   width: 100%
   flex-direction: column
+  justify-content: space-between
   @media(min-width: 720px)
     flex-direction: row
   &:not(:last-child)
     margin-bottom: 6rem
   
   &__browser
-    width: 100%
-    max-width: 800px
-    margin-right: 4rem
     position: relative
+    width: calc(#{percentage(1/1.618)} - #{$grid-gutter-width / 2})
     img
-      box-shadow: 0 12px 80px rgba(102, 125, 178, 0.2)
+      filter: drop-shadow(0 12px 80px rgba(102, 125, 178, 0.2))
 
   &__info
-    padding-top: 3rem
+    padding-top: 3.5rem
     @media(min-width: 720px)
-      width: 54%
+      width: calc(#{percentage(1-1/1.618)} - #{$grid-gutter-width / 2}) 
 
   &__heading
     margin-bottom: 0.5rem
