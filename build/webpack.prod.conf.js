@@ -9,7 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 const env = config.build.env
 
@@ -96,12 +96,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
-    new PrerenderSpaPlugin(
-      // Absolute path to compiled SPA
-      path.join(__dirname, '../docs'),
-      // List of routes to prerender
-      ['/'],
-    )
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
   ]
 })
 
