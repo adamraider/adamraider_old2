@@ -42,7 +42,7 @@ export default {
         }, 2000)
       }
 
-      axios.post('https://formspree.io/adamjraider@gmail.com', {
+      axios.post('https://formspree.io/adam@raider.tech', {
         name: this.name,
         email: this.email,
         message: this.message
