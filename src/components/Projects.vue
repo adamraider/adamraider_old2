@@ -7,7 +7,7 @@
     .project__info
       .h2.project__heading Extensions.af
       .project__subheading Maker
-      .project__desc #[strong #1 on Product Hunt]. The best chrome extensions on the internet. Extensions is a single page application built with Vue.js paired with a Rails + Postgres backend.
+      .project__desc #[strong #1 on Product Hunt]. The best chrome extensions on the Internet. Extensions is a single page application built with Vue.js paired with a Rails + Postgres backend.
 
   .project
     .project__browser
@@ -25,7 +25,7 @@
     .project__info
       .h2.project__heading MealPal
       .project__subheading Software Engineer
-      .project__desc Serving up lunch and dinner for #[strong thousands of users]. Built out full-stack functionality for new features. Such as, modualar signup experiences, internationalization, new visual designs and more.
+      .project__desc Serving up lunch and dinner for #[strong thousands of users]. Built out full-stack functionality for new features. Such as, modular signup experiences, internationalization, new visual designs and more.
 </template>
 
 <script>
