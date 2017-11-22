@@ -32,6 +32,7 @@ export default {
 
 <style lang="sass">
 @import './sass/base'
+@import './sass/fonts'
 
 .app
   &__content
