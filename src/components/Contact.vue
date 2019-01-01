@@ -5,8 +5,8 @@
     .h3.text--center I'll be in touch shortly.
   
   .contact__ready
-    .h2.text--center.contact__heading I'd love to work with you.
-    .h3.text--center How do you take your coffee?
+    .h2.text--center.contact__heading Get in touch
+    .h3.text--center Let's grab some coffee ☕
     form.contact__form(@submit.prevent="submitForm()", :class="{ 'contact__form--processing': processing }")
       input(type="text" placeholder="Name" v-model="name" name="name" required)
       input(type="email" placeholder="Email" v-model="email" name="email" required)
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  data () {
+  data() {
     return {
       name: null,
       email: null,
@@ -28,35 +28,38 @@ export default {
       error: null,
       processing: false,
       completed: false
-    }
+    };
   },
   methods: {
-    submitForm () {
-      this.error = null
-      this.processing = true
+    submitForm() {
+      this.error = null;
+      this.processing = true;
 
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV === "development") {
         return setTimeout(() => {
-          this.completed = true
-          this.processing = false
-        }, 2000)
+          this.completed = true;
+          this.processing = false;
+        }, 2000);
       }
 
-      axios.post('https://formspree.io/adam@raider.tech', {
-        name: this.name,
-        email: this.email,
-        message: this.message
-      }).then(res => {
-        this.completed = true
-        this.processing = false
-      }).catch(res => {
-        this.completed = false
-        this.processing = false
-        this.error = res.error
-      })
+      axios
+        .post("https://formspree.io/adam@raider.tech", {
+          name: this.name,
+          email: this.email,
+          message: this.message
+        })
+        .then(res => {
+          this.completed = true;
+          this.processing = false;
+        })
+        .catch(res => {
+          this.completed = false;
+          this.processing = false;
+          this.error = res.error;
+        });
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>

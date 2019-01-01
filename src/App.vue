@@ -3,7 +3,7 @@
     .app__content
       .app__header
         .app__title
-          h1.h1 Adam Raider is a web applications developer, designer and maker in New York City.
+          h1.h1 Adam Raider is making web applications #[<br>] in New York City.
       
       Projects
       Skills
@@ -12,22 +12,25 @@
 </template>
 
 <script>
-import Companies from './components/Companies'
-import Contact from './components/Contact'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
+import Companies from "./components/Companies";
+import Contact from "./components/Contact";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Companies, Contact, Projects, Skills
+    Companies,
+    Contact,
+    Projects,
+    Skills
   },
-  data () {
+  data() {
     return {
       error: null
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="sass">
@@ -49,4 +52,7 @@ export default {
     
   &__title
     display: flex
+
+  &__subtitle
+    opacity: 0.75
 </style>

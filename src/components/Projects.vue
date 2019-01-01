@@ -5,8 +5,8 @@
       img(src="/static/examples/framed_extensions.png")
 
     .project__info
+      .project__subheading.project__subheading--extensions Maker
       .h2.project__heading Extensions.af
-      .project__subheading Maker
       .project__desc #[strong #1 on Product Hunt]. The best chrome extensions on the Internet. Extensions is a single page application built with Vue.js paired with a Rails + Postgres backend.
 
   .project
@@ -14,8 +14,8 @@
       img(src="/static/examples/framed_swipebuy.png")
 
     .project__info
+      .project__subheading.project__subheading--swipebuy Maker
       .h2.project__heading Swipebuy
-      .project__subheading Maker
       .project__desc #[strong #4 on Product Hunt]. Sell from Instagram and Snapchat like a piece of cake. Customizable Vue.js application with animations and UI imitating a messaging app. Integrates with Stripe for payments.
 
   .project
@@ -23,14 +23,13 @@
       img(src="/static/examples/framed_mealpal.png")
 
     .project__info
+      .project__subheading.project__subheading--mealpal Software Engineer
       .h2.project__heading MealPal
-      .project__subheading Software Engineer
-      .project__desc Serving up lunch and dinner for #[strong thousands of users]. Built out full-stack functionality for new features. Such as, modular signup experiences, internationalization, new visual designs and more.
+      .project__desc Serving up lunch and dinner for thousands of users. Built out full-stack functionality for new features. Such as, modular signup experiences, internationalization, new visual designs and more.
 </template>
 
 <script>
-export default {
-}
+export default {};
 </script>
 
 <style lang="sass" scoped>
@@ -60,21 +59,36 @@ $grid-gutter-width: 4rem
       width: calc(#{percentage(1-1/1.618)} - #{$grid-gutter-width / 2}) 
 
   &__heading
-    margin-bottom: 0.5rem
+    margin-bottom: 1rem
+    font-weight: 400
+    font-size: 1.875rem
 
   &__subheading
-    font-size: 1.25rem
+    font-size: 1rem
+    font-weight: 500
     margin-bottom: 1rem
-    opacity: 0.5
+    display: inline-block
+    padding: 0.15rem .5rem
+    border-radius: 5px
+
+    &--extensions
+      background: hsl(342, 100%, 78%)
+      color: hsl(342, 100%, 15%)
+
+    &--swipebuy
+      background: hsl(170, 100%, 78%)
+      color: hsl(170, 100%, 15%)
+    
+    &--mealpal
+      background: hsl(5, 100%, 78%)
+      color: hsl(5, 100%, 15%)
 
   &__desc
-    color: #757575
-    font-size: 1.25em
+    font-size: 1.25rem
     line-height: 1.9
     &:not(:last-child)
       margin-bottom: 1em
     
     strong
-      font-weight: 500
-      color: #424242
+      font-weight: 400
 </style>

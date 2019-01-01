@@ -1,51 +1,60 @@
 <template lang="pug">
 .companies
-  .companies__heading.h2.text--center Companies I've worked with.
+  .companies__heading.h2.text--center Companies I've worked with
   .companies__images
     .companies__example(v-for="brand in companies", :class="`companies__example--${brand.class}`"): img(:src="`${brand.image}`", :alt="brand.name")
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       companies: [
         {
-          image: '/static/companies/privacy.svg',
-          name: 'Privacy',
-          class: 'privacy'
+          image: "/static/companies/wework.svg",
+          name: "WeWork",
+          class: "wework"
         },
         {
-          image: '/static/companies/tokenly2.png',
-          name: 'Tokenly',
-          class: 'tokenly'
+          image: "/static/companies/privacy.png",
+          name: "Privacy",
+          class: "privacy"
         },
         {
-          image: '/static/companies/mealpal.svg',
-          name: 'MealPal',
-          class: 'mealpal'
+          image: "/static/companies/tokenly3.png",
+          name: "Tokenly",
+          class: "tokenly"
         },
         {
-          image: '/static/companies/nycda.svg',
-          name: 'New York Code + Design Academy',
-          class: 'nycda'
+          image: "/static/companies/mealpal.svg",
+          name: "MealPal",
+          class: "mealpal"
         },
         {
-          image: '/static/companies/getaway.svg',
-          name: 'Getaway',
-          class: 'getaway'
+          image: "/static/companies/nycda.svg",
+          name: "New York Code + Design Academy",
+          class: "nycda"
+        },
+        {
+          image: "/static/companies/getaway.svg",
+          name: "Getaway",
+          class: "getaway"
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>
 .companies
-  max-width: 960px
+  max-width: 530px
   margin: 0 auto 10rem
 
+  @media(min-width: 720px)
+    max-width: 760px
+
+  
   &__heading
     margin-bottom: 3.5rem
 
